@@ -13,7 +13,8 @@
 
 @property (strong, nonatomic) NSMutableArray *sequenceOfMemoryButtons;
 
-- (void)reciteMemoryButton:(TMDMemoryButton *)memoryButton;
+
+- (void)reciteMemoryButton:(TMDMemoryButton *)memoryButton withDelay:(NSUInteger)delayInSeconds;
 
 @end
 
@@ -42,47 +43,84 @@
 
 - (IBAction)startRound:(id)sender
 {
+    NSLog(@"startRound called ...");
+    
+    [self.startButton setUserInteractionEnabled:NO];
+    self.startButton.alpha = 0.0;
+
     // add random memoryButton to sequence of buttons
     [self.sequenceOfMemoryButtons addObject:[TMDMemoryButton newButton]];
     
     for (int count = 0; count < [self.sequenceOfMemoryButtons count]; count++) {
     
-        [self reciteMemoryButton:[self.sequenceOfMemoryButtons objectAtIndex:count]];
+        [self reciteMemoryButton:[self.sequenceOfMemoryButtons objectAtIndex:count] withDelay:count];
         
     }
     
-    
-    
-     
+    NSLog(@"startRound finished ...");
 }
 
-- (void)reciteMemoryButton:(TMDMemoryButton *)memoryButton
+- (void)reciteMemoryButton:(TMDMemoryButton *)memoryButton withDelay:(NSUInteger)delayInSeconds
 {
     UIButton *buttonToAnimate = nil;
     
-    if (memoryButton.colour == [UIColor blueColor]) {
-        buttonToAnimate = self.blueButton;
-    } else if (memoryButton.colour == [UIColor redColor]) {
-        buttonToAnimate = self.redButton;
-    } else if (memoryButton.colour == [UIColor greenColor]) {
-        buttonToAnimate = self.greenButton;
-    } else if (memoryButton.colour == [UIColor orangeColor]) {
-        buttonToAnimate = self.orangeButton;
+    switch (memoryButton.colour) {
+        case Blue:
+            buttonToAnimate = self.blueButton;
+            break;
+            
+        case Red:
+            buttonToAnimate = self.redButton;
+            break;
+            
+        case Green:
+            buttonToAnimate = self.greenButton;
+            break;
+            
+        case Orange:
+            buttonToAnimate = self.orangeButton;
+            break;
+            
+        default:
+            break;
     }
+    
     
     //play back sequence...
     void (^waxingAnimationBlock)(void) = ^void(void){
         
         buttonToAnimate.alpha = 1.0;
+        
+        //NSLog(@"animating button");
+        
+        if (buttonToAnimate == self.redButton) {
+            NSLog(@"red button animated");
+        } else if (buttonToAnimate == self.blueButton) {
+            NSLog(@"blue button animated");
+        } else if (buttonToAnimate == self.greenButton) {
+            NSLog(@"green button animated");
+        } else if (buttonToAnimate == self.orangeButton) {
+            NSLog(@"orange button animated");
+        }
+        
+        
     };
     
     void (^waningAnimationBlock)(BOOL) = ^void(BOOL someFlag){
         
+        NSLog(@"someFlag is: %d", someFlag);
+        
         buttonToAnimate.alpha = 0.5;
+        if ([self.sequenceOfMemoryButtons count] -1 == delayInSeconds)
+        {
+            NSLog(@"Reenabled button");
+            [self.startButton setUserInteractionEnabled:YES];
+            self.startButton.alpha = 1.0;
+        }
         
     };
     
-    [UIView animateKeyframesWithDuration:1 delay:0 options:(UIViewKeyframeAnimationOptionLayoutSubviews | UIViewAnimationOptionAutoreverse | UIViewAnimationOptionAllowUserInteraction) animations:waxingAnimationBlock completion:waningAnimationBlock];
+    [UIView animateKeyframesWithDuration:0.5 delay:delayInSeconds options:(UIViewKeyframeAnimationOptionLayoutSubviews | UIViewAnimationOptionAutoreverse) animations:waxingAnimationBlock completion:waningAnimationBlock];
     
     
 }

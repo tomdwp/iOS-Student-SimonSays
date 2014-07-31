@@ -66,6 +66,7 @@
                         <outlet property="greenButton" destination="qmp-Rz-USV" id="g3j-Ud-f8p"/>
                         <outlet property="orangeButton" destination="QNn-WY-T5N" id="BQe-eP-zZD"/>
                         <outlet property="redButton" destination="bLp-O3-ghR" id="Zrh-sr-QHg"/>
+                        <outlet property="startButton" destination="g1B-Fz-aER" id="gYC-kc-OnK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

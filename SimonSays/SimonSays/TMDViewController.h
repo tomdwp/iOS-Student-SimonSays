@@ -15,7 +15,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *greenButton;
 @property (weak, nonatomic) IBOutlet UIButton *orangeButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
 
 - (IBAction)startRound:(id)sender;
+
+
 
 @end

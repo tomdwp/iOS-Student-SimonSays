@@ -20,19 +20,19 @@
         
         switch (randomNumber) {
             case 0:
-                _colour = [UIColor redColor];
+                _colour = Red;
                 break;
                 
             case 1:
-                _colour = [UIColor blueColor];
+                _colour = Blue;
                 break;
                 
             case 2:
-                _colour = [UIColor greenColor];
+                _colour = Green;
                 break;
                 
             case 3:
-                _colour = [UIColor orangeColor];
+                _colour = Orange;
                 break;
                 
             default:
