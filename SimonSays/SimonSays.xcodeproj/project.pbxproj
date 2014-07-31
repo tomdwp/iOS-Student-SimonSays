@@ -21,6 +21,7 @@
 		6376D8D81989BDE000405622 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6376D8BA1989BDE000405622 /* UIKit.framework */; };
 		6376D8E01989BDE000405622 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6376D8DE1989BDE000405622 /* InfoPlist.strings */; };
 		6376D8E21989BDE000405622 /* SimonSaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6376D8E11989BDE000405622 /* SimonSaysTests.m */; };
+		6376D8ED1989C2ED00405622 /* TMDMemoryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6376D8EC1989C2ED00405622 /* TMDMemoryButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		6376D8DD1989BDE000405622 /* SimonSaysTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SimonSaysTests-Info.plist"; sourceTree = "<group>"; };
 		6376D8DF1989BDE000405622 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6376D8E11989BDE000405622 /* SimonSaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimonSaysTests.m; sourceTree = "<group>"; };
+		6376D8EB1989C2ED00405622 /* TMDMemoryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDMemoryButton.h; sourceTree = "<group>"; };
+		6376D8EC1989C2ED00405622 /* TMDMemoryButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDMemoryButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				6376D8C81989BDE000405622 /* Main.storyboard */,
 				6376D8CB1989BDE000405622 /* TMDViewController.h */,
 				6376D8CC1989BDE000405622 /* TMDViewController.m */,
+				6376D8EB1989C2ED00405622 /* TMDMemoryButton.h */,
+				6376D8EC1989C2ED00405622 /* TMDMemoryButton.m */,
 				6376D8CE1989BDE000405622 /* Images.xcassets */,
 				6376D8BD1989BDE000405622 /* Supporting Files */,
 			);
@@ -252,6 +257,7 @@
 			files = (
 				6376D8C71989BDE000405622 /* TMDAppDelegate.m in Sources */,
 				6376D8C31989BDE000405622 /* main.m in Sources */,
+				6376D8ED1989C2ED00405622 /* TMDMemoryButton.m in Sources */,
 				6376D8CD1989BDE000405622 /* TMDViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +463,7 @@
 				6376D8E71989BDE000405622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6376D8E81989BDE000405622 /* Build configuration list for PBXNativeTarget "SimonSaysTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +472,7 @@
 				6376D8EA1989BDE000405622 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
